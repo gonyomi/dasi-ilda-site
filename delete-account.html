@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>계정 삭제 · 다시읽다</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>다시읽다 계정 삭제</h1>
+      <p>
+        앱이 없어도 여기서 계정을 삭제할 수 있어요. 앱에서는 <strong>나 탭 → 계정 → 계정 삭제</strong>에서
+        할 수 있어요.
+      </p>
+
+      <div class="card">
+        <h2>지워지는 것</h2>
+        <ul>
+          <li>로그인 정보(계정)</li>
+          <li>서버에 백업한 책·노트·진도·복습 카드·습관 기록</li>
+        </ul>
+        <p>삭제하면 바로 지워지고 되돌릴 수 없어요. 휴대폰 안에만 있는 기록은 앱을 지우면 함께 사라져요.</p>
+      </div>
+
+      <section class="card" id="step-email">
+        <label for="email">계정 이메일</label>
+        <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" />
+        <button id="send">인증 코드 받기</button>
+      </section>
+
+      <section class="card" id="step-code" hidden>
+        <p id="sent-to"></p>
+        <label for="code">인증 코드 6자리</label>
+        <input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" />
+        <button id="verify">확인</button>
+        <button class="ghost" id="back">이메일 바꾸기</button>
+      </section>
+
+      <section class="card" id="step-confirm" hidden>
+        <h2>정말 삭제할까요?</h2>
+        <p id="confirm-email"></p>
+        <button class="danger" id="delete">계정 삭제하기</button>
+      </section>
+
+      <section class="card" id="step-done" hidden>
+        <h2>계정을 삭제했어요</h2>
+        <p>이용해 주셔서 고마웠어요.</p>
+      </section>
+
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+    </main>
+    <script type="module" src="delete-account.js"></script>
+  </body>
+</html>
