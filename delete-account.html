@@ -10,8 +10,8 @@
     <main>
       <h1>다시읽다 계정 삭제</h1>
       <p>
-        앱이 없어도 여기서 계정을 삭제할 수 있어요. 앱에서는 <strong>나 탭 → 계정 → 계정 삭제</strong>에서
-        할 수 있어요.
+        앱이 없어도 여기서 계정을 삭제할 수 있어요. 앱에서는
+        <strong>나 탭 → 계정 → 계정 삭제</strong>에서 할 수 있어요.
       </p>
 
       <div class="card">
@@ -20,35 +20,47 @@
           <li>로그인 정보(계정)</li>
           <li>서버에 백업한 책·노트·진도·복습 카드·습관 기록</li>
         </ul>
-        <p>삭제하면 바로 지워지고 되돌릴 수 없어요. 휴대폰 안에만 있는 기록은 앱을 지우면 함께 사라져요.</p>
+        <p>
+          삭제하면 바로 지워지고 되돌릴 수 없어요. 휴대폰 안에만 있는 기록은 앱을 지우면 함께
+          사라져요.
+        </p>
       </div>
 
-      <section class="card" id="step-email">
+      <form class="card" id="step-email">
         <label for="email">계정 이메일</label>
-        <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" />
-        <button id="send">인증 코드 받기</button>
-      </section>
+        <input
+          id="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          placeholder="name@example.com"
+        />
+        <button type="submit" id="send">인증 코드 받기</button>
+      </form>
 
-      <section class="card" id="step-code" hidden>
+      <form class="card" id="step-code" hidden>
         <p id="sent-to"></p>
         <label for="code">인증 코드 6자리</label>
         <input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" />
-        <button id="verify">확인</button>
-        <button class="ghost" id="back">이메일 바꾸기</button>
-      </section>
+        <button type="submit" id="verify">확인</button>
+        <button type="button" class="ghost" id="back">이메일 바꾸기</button>
+      </form>
 
       <section class="card" id="step-confirm" hidden>
-        <h2>정말 삭제할까요?</h2>
+        <h2 id="confirm-title" tabindex="-1">정말 삭제할까요?</h2>
         <p id="confirm-email"></p>
-        <button class="danger" id="delete">계정 삭제하기</button>
+        <button type="button" class="danger" id="delete">계정 삭제하기</button>
       </section>
 
       <section class="card" id="step-done" hidden>
-        <h2>계정을 삭제했어요</h2>
+        <h2 id="done-title" tabindex="-1">계정을 삭제했어요</h2>
         <p>이용해 주셔서 고마웠어요.</p>
       </section>
 
-      <p class="message" id="message" role="status" aria-live="polite"></p>
+      <!-- 스크립트가 뜨면 지운다. 남아 있으면 인터넷 연결이나 브라우저 문제다. -->
+      <p class="message" id="message" role="status" aria-live="polite">
+        페이지를 불러오는 중이에요. 이 글이 계속 보이면 인터넷 연결을 확인하고 새로고침해 주세요.
+      </p>
     </main>
     <script type="module" src="delete-account.js"></script>
   </body>
